@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lobin_1.png-283c1e738c844fac67e56c1d8ee0004c.stex"
+path="res://.import/lobin_16.png-685162beda3f7d58fdd8a03f55cf30ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/lobins/sprites/idle/lobin_1.png"
-dest_files=[ "res://.import/lobin_1.png-283c1e738c844fac67e56c1d8ee0004c.stex" ]
+source_file="res://characters/lobins/sprites/hit/lobin_16.png"
+dest_files=[ "res://.import/lobin_16.png-685162beda3f7d58fdd8a03f55cf30ba.stex" ]
 
 [params]
 
