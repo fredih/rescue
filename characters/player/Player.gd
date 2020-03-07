@@ -51,7 +51,7 @@ func animate(direction):
 		$AnimatedSprite.flip_h = true
 	elif direction.x < 0:
 		$AnimatedSprite.flip_h = false
-	if _velocity.length() > 0:
+	if _velocity.x > 0:
 		$AnimatedSprite.animation = "run"
 	else:
 		$AnimatedSprite.animation = "idle"
