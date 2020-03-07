@@ -20,4 +20,4 @@ tile_data = PoolIntArray( 65554, 0, 0, 65555, 0, 1, 65556, 0, 1, 65557, 0, 1, 65
 position = Vector2( 263.373, 14.2017 )
 
 [node name="Lobin" parent="." instance=ExtResource( 3 )]
-position = Vector2( 71.1773, 40.8673 )
+position = Vector2( 89.4152, 32.8937 )

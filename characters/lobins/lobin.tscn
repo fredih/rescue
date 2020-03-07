@@ -55,7 +55,7 @@ shape = SubResource( 1 )
 [node name="lobinSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "Walk"
-frame = 6
+frame = 3
 playing = true
 __meta__ = {
 "_edit_lock_": true
