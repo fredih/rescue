@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/elf_m_run_anim_f3.png-6d1d80363d0d6724c674c5396d02aaf0.stex"
+path="res://.import/Clown10.png-b629a66002cda456e89bfaa4c06f33c9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/sprites/run/elf_m_run_anim_f3.png"
-dest_files=[ "res://.import/elf_m_run_anim_f3.png-6d1d80363d0d6724c674c5396d02aaf0.stex" ]
+source_file="res://characters/player/sprites/idle/Clown10.png"
+dest_files=[ "res://.import/Clown10.png-b629a66002cda456e89bfaa4c06f33c9.stex" ]
 
 [params]
 

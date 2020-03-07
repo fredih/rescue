@@ -5,6 +5,7 @@ export var isLit = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
+	$AnimatedSprite.flip_h = true
 	$AnimatedSprite.animation = "idle"
 	$AnimatedSprite.play()
 
@@ -23,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	_velocity = move_and_slide_with_snap(
 		_velocity, snap, FLOOR_NORMAL, true
 	)
-	animate()
+	animate(direction)
 
 func get_direction() -> Vector2:
 	return Vector2(
@@ -43,11 +44,15 @@ func calculate_move_velocity(
 		velocity.y = 0.0
 	return velocity
 	
-func animate():
+func animate(direction):
+	if _velocity.y > 0:
+		$AnimatedSprite.animation = "jump"
+	if direction.x > 0:
+		$AnimatedSprite.flip_h = true
+	elif direction.x < 0:
+		$AnimatedSprite.flip_h = false
 	if _velocity.length() > 0:
-		$AnimatedSprite.animation = "move"
-		$AnimatedSprite.flip_h = _velocity.x < 0
-		
+		$AnimatedSprite.animation = "run"
 	else:
 		$AnimatedSprite.animation = "idle"
 		

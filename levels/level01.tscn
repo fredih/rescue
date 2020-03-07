@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Baselevel.gd" type="Script" id=3]
+[ext_resource path="res://characters/lobins/lobin.tscn" type="PackedScene" id=4]
 
-[node name="level02" type="Node2D"]
+[node name="level01" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -17,3 +18,5 @@ tile_data = PoolIntArray( 327712, 1, 0, 327713, 1, 1, 393248, 1, 65536, 393249, 
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 263.373, 14.2017 )
+
+[node name="Lobin" parent="." instance=ExtResource( 4 )]
