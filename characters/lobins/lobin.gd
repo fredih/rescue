@@ -1,8 +1,6 @@
-extends KinematicBody2D
+extends Actor
 
-var isLit
 var target
-var playerPos = Vector2()
 var playerPointer
 var velocity = Vector2()
 
@@ -11,9 +9,8 @@ func _ready():
 
 
 func _process(delta):
-	if isLit:
-		playerPointer = playerPos - position
-		velocity = playerPointer.normalized()
+	if target.isLit:
+		
 		
 func _physics_process(delta):
 	var space_state = get_world_2d().direct_space_state

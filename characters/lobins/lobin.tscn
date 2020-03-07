@@ -14,33 +14,29 @@
 [ext_resource path="res://characters/lobins/sprites/walk/tile005.png" type="Texture" id=12]
 [ext_resource path="res://characters/lobins/sprites/run/lobin_18.png" type="Texture" id=13]
 [ext_resource path="res://characters/lobins/sprites/run/lobin_19.png" type="Texture" id=14]
-[ext_resource path="res://characters/lobins/lobin.gd" type="Script" id=15]
+[ext_resource path="res://characters/lobins/Lobin.gd" type="Script" id=15]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.40524, 7.54183 )
 
-[sub_resource type="StreamTexture" id=1]
-load_path = "res://.import/dino_idle_1.png-f6055551b746571ac401b69e8db561c9.stex"
-
 [sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/dino_idle_2.png-c884ba08539d4a0f92a6b72c7f6e9418.stex"
 
 [sub_resource type="StreamTexture" id=3]
-load_path = "res://.import/dino_idle_3.png-8a10baf8a152a8cd3571226f4c62fa3b.stex"
 
 [sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/dino_idle_4.png-abfeb9d5b54b1ec6d21a4411898ad8cd.stex"
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="StreamTexture" id=5]
+
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Run",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 5 ) ],
@@ -49,15 +45,15 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="lobin" type="KinematicBody2D"]
+[node name="Lobin" type="KinematicBody2D"]
 script = ExtResource( 15 )
 
 [node name="walkAndRunHitbox" type="CollisionShape2D" parent="."]
 position = Vector2( -0.368057, 0.815971 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="lobinSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 5 )
+frames = SubResource( 6 )
 animation = "Walk"
 frame = 6
 playing = true

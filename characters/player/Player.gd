@@ -1,6 +1,7 @@
 extends Actor
 
 var screen_size
+export var isLit = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -10,7 +11,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.get_action_strength("ui_accept")
+		isLit = !isLit
 
 
 func _physics_process(delta: float) -> void:
