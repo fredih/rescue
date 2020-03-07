@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/elf_m_run_anim_f0.png-2626dd5294d718c1ad0bbd5364196a9b.stex"
+path="res://.import/elf_m_run_anim_f1.png-2b891960e1b1b81ef24c23a64a830925.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/sprites/elf_m_run_anim_f0.png"
-dest_files=[ "res://.import/elf_m_run_anim_f0.png-2626dd5294d718c1ad0bbd5364196a9b.stex" ]
+source_file="res://characters/player/sprites/run/elf_m_run_anim_f1.png"
+dest_files=[ "res://.import/elf_m_run_anim_f1.png-2b891960e1b1b81ef24c23a64a830925.stex" ]
 
 [params]
 
