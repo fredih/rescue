@@ -52,20 +52,22 @@ func calculate_move_velocity(
 	return velocity
 	
 func animate(direction):
+	
 	if isThrowing:
 		$AnimatedSprite.animation = "attack"
 		$AnimatedSprite.speed_scale = 6
 		return
-	if _velocity.y > 0:
+	elif _velocity.y > 0:
 		$AnimatedSprite.animation = "jump"
+	elif _velocity.x != 0:
+		$AnimatedSprite.animation = "run"
+	else:
+		$AnimatedSprite.animation = "idle"
+	
 	if direction.x > 0:
 		$AnimatedSprite.flip_h = true
 	elif direction.x < 0:
 		$AnimatedSprite.flip_h = false
-	if _velocity.x > 0:
-		$AnimatedSprite.animation = "run"
-	else:
-		$AnimatedSprite.animation = "idle"
 		
 	
 

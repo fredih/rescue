@@ -40,8 +40,13 @@ func _physics_process(delta: float) -> void:
 				
 		"reachingPlayer":
 			raycastPlayer()
-			$lobinSprite.animation = "Walk"
+			
 			_velocity.x = speed.x * (target.position.x - position.x)
+			if abs(_velocity.x) > 150:
+				$lobinSprite.animation = "Run"
+			else:
+				$lobinSprite.animation = "Walk"
+				
 			if !target.isLit  or !(result.collider == target):
 					_velocity.x = 0
 					state = "scared"
@@ -57,6 +62,11 @@ func _physics_process(delta: float) -> void:
 			
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL, false)
 	$Light.enabled = isLit
+	
+	if _velocity.x < 0:
+		$lobinSprite.flip_h = true
+	elif _velocity.x > 0:
+		$lobinSprite.flip_h = false
 			
 		
 		
