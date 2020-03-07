@@ -2,6 +2,8 @@ extends Actor
 
 var screen_size
 export var isLit = false
+var isThrowing = false
+var direction
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -19,12 +21,14 @@ func _process(delta):
 
 func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("ui_up") and _velocity.y < 0.0
-	var direction: = get_direction()
+	direction = get_direction()
 	_velocity = calculate_move_velocity(direction, is_jump_interrupted)
 	var snap: Vector2 = Vector2.DOWN * 10.0 if direction.y == 0.0 else Vector2.ZERO
 	_velocity = move_and_slide_with_snap(
 		_velocity, snap, FLOOR_NORMAL, true
 	)
+	if Input.is_action_just_pressed("ui_throw"):
+		isThrowing = true
 	animate(direction)
 
 func get_direction() -> Vector2:
@@ -46,6 +50,10 @@ func calculate_move_velocity(
 	return velocity
 	
 func animate(direction):
+	if isThrowing:
+		$AnimatedSprite.animation = "attack"
+		$AnimatedSprite.speed_scale = 6
+		return
 	if _velocity.y > 0:
 		$AnimatedSprite.animation = "jump"
 	if direction.x > 0:
@@ -58,3 +66,10 @@ func animate(direction):
 		$AnimatedSprite.animation = "idle"
 		
 	
+
+
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == "attack":
+		$AnimatedSprite.speed_scale = 1
+		isThrowing = false
+		animate(direction)
