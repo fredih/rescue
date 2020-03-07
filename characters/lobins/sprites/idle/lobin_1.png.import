@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dino_run_4.png-b4489cd63e6c909d3c47e9ad34ab1c57.stex"
+path="res://.import/lobin_1.png-283c1e738c844fac67e56c1d8ee0004c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/lobins/sprites/run/dino_run_4.png"
-dest_files=[ "res://.import/dino_run_4.png-b4489cd63e6c909d3c47e9ad34ab1c57.stex" ]
+source_file="res://characters/lobins/sprites/idle/lobin_1.png"
+dest_files=[ "res://.import/lobin_1.png-283c1e738c844fac67e56c1d8ee0004c.stex" ]
 
 [params]
 

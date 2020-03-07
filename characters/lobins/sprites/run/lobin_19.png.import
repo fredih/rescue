@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dino_idle_4.png-abfeb9d5b54b1ec6d21a4411898ad8cd.stex"
+path="res://.import/lobin_19.png-1ee4fa11b822b7eae839f8c94f611023.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/lobins/sprites/idle/dino_idle_4.png"
-dest_files=[ "res://.import/dino_idle_4.png-abfeb9d5b54b1ec6d21a4411898ad8cd.stex" ]
+source_file="res://characters/lobins/sprites/run/lobin_19.png"
+dest_files=[ "res://.import/lobin_19.png-1ee4fa11b822b7eae839f8c94f611023.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

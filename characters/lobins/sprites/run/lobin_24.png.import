@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dino_run_5.png-d3f634d24b8445ce76a1ae03142f3440.stex"
+path="res://.import/lobin_24.png-7a18b07bc17b50ea47ee8ecafba918c3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/lobins/sprites/run/dino_run_5.png"
-dest_files=[ "res://.import/dino_run_5.png-d3f634d24b8445ce76a1ae03142f3440.stex" ]
+source_file="res://characters/lobins/sprites/run/lobin_24.png"
+dest_files=[ "res://.import/lobin_24.png-7a18b07bc17b50ea47ee8ecafba918c3.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
