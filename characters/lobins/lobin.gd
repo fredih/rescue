@@ -54,8 +54,10 @@ func _physics_process(delta: float) -> void:
 				_velocity.x = 0
 				state = "scared"
 			
+			
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL, false)
 	$Light.enabled = isLit
+			
 		
 		
 func raycastPlayer():

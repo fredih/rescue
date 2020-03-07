@@ -4,6 +4,8 @@ var screen_size
 export var isLit = false
 var isThrowing = false
 var direction
+var hasLobin = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
