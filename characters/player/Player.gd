@@ -1,7 +1,5 @@
-extends Area2D
+extends Actor
 
-
-var speed = 120
 var screen_size
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,21 +10,43 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var velocity = Vector2()
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= 1
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+	pass
+
+
+func _physics_process(delta: float) -> void:
+	var is_jump_interrupted: = Input.is_action_just_released("ui_up") and _velocity.y < 0.0
+	var direction: = get_direction()
+	_velocity = calculate_move_velocity(direction, is_jump_interrupted)
+	var snap: Vector2 = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
+	_velocity = move_and_slide_with_snap(
+		_velocity, snap, FLOOR_NORMAL, true
+	)
+	animate()
+
+func get_direction() -> Vector2:
+	return Vector2(
+		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
+		-Input.get_action_strength("ui_up") if is_on_floor() and Input.is_action_just_pressed("ui_up") else 0.0
+	)
+	
+func calculate_move_velocity(
+		direction: Vector2,
+		is_jump_interrupted: bool
+	) -> Vector2:
+	var velocity: = _velocity
+	velocity.x = speed.x * direction.x
+	if direction.y != 0.0:
+		velocity.y = speed.y * direction.y
+	if is_jump_interrupted:
+		velocity.y = 0.0
+	return velocity
+	
+func animate():
+	if _velocity.length() > 0:
 		$AnimatedSprite.animation = "move"
-		$AnimatedSprite.flip_h = velocity.x < 0
+		$AnimatedSprite.flip_h = _velocity.x < 0
 		
 	else:
 		$AnimatedSprite.animation = "idle"
-		#$AnimatedSprite.stop()
 		
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
 	
