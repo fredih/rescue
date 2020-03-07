@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("ui_up") and _velocity.y < 0.0
 	var direction: = get_direction()
 	_velocity = calculate_move_velocity(direction, is_jump_interrupted)
-	var snap: Vector2 = Vector2.DOWN * 60.0 if direction.y == 0.0 else Vector2.ZERO
+	var snap: Vector2 = Vector2.DOWN * 10.0 if direction.y == 0.0 else Vector2.ZERO
 	_velocity = move_and_slide_with_snap(
 		_velocity, snap, FLOOR_NORMAL, true
 	)
