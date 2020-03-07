@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.get_action_strength("ui_accept"):
+	if Input.is_action_just_pressed("ui_lit"):
 		isLit = !isLit
 
 

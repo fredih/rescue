@@ -29,6 +29,7 @@ _global_script_class_icons={
 config/name="Rescue"
 config/icon="res://icon.png"
 
+
 [display]
 
 window/size/width=480
@@ -37,6 +38,14 @@ window/size/test_width=1280
 window/size/test_height=720
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[input]
+
+ui_lit={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 
