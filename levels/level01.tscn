@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Baselevel.gd" type="Script" id=3]
 [ext_resource path="res://characters/lobins/lobin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/brackgrounds/Background.png" type="Texture" id=5]
+[ext_resource path="res://levels/brackgrounds/shadow.png" type="Texture" id=6]
 
 [node name="level01" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Shadow" type="Light2D" parent="."]
+position = Vector2( 241.737, 135.094 )
+texture = ExtResource( 6 )
+mode = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -20,3 +27,8 @@ tile_data = PoolIntArray( 327712, 1, 0, 327713, 1, 1, 393248, 1, 65536, 393249, 
 position = Vector2( 263.373, 14.2017 )
 
 [node name="Lobin" parent="." instance=ExtResource( 4 )]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 466.428, -78.7929 )
+z_index = -2
+texture = ExtResource( 5 )

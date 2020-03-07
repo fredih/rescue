@@ -29,7 +29,6 @@ _global_script_class_icons={
 config/name="Rescue"
 config/icon="res://icon.png"
 
-
 [display]
 
 window/size/width=480
