@@ -14,6 +14,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_lit"):
 		isLit = !isLit
+		$Light.energy = 1.4 if (isLit) else 0
 
 
 func _physics_process(delta: float) -> void:
