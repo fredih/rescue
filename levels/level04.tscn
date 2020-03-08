@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://levels/brackgrounds/Background.png" type="Texture" id=5]
 [ext_resource path="res://levels/brackgrounds/shadow.png" type="Texture" id=6]
 [ext_resource path="res://environment/goal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://levels/level02.tscn" type="PackedScene" id=8]
 [ext_resource path="res://characters/enemies/roliver/Roliver.tscn" type="PackedScene" id=9]
 
 [node name="level04" type="Node2D"]
@@ -33,7 +32,6 @@ mode = 2
 
 [node name="Goal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 351.632, 213.879 )
-next_scene = ExtResource( 8 )
 
 [node name="Lobin" parent="." instance=ExtResource( 4 )]
 position = Vector2( 44.9868, 212.362 )
