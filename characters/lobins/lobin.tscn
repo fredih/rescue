@@ -68,24 +68,21 @@ shape = SubResource( 1 )
 light_mask = 2
 frames = SubResource( 2 )
 animation = "Hit"
-frame = 8
+frame = 5
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Light" type="Light2D" parent="."]
-visible = false
-position = Vector2( 0.429274, -0.135151 )
-scale = Vector2( 0.530478, 0.566499 )
-enabled = false
-texture = ExtResource( 23 )
-color = Color( 0.321569, 0.521569, 0.941176, 1 )
-energy = 1.92
-
-[node name="Light2" type="Light2D" parent="."]
+[node name="DefaultLight" type="Light2D" parent="."]
 light_mask = 4
 texture = ExtResource( 23 )
-texture_scale = 3.2
-energy = 2.1
+energy = 2.0
+
+[node name="Light" type="Light2D" parent="."]
+light_mask = 4
+texture = ExtResource( 23 )
+texture_scale = 2.9
+color = Color( 0.282353, 0.32549, 1, 1 )
+energy = 3.8
 [connection signal="animation_finished" from="lobinSprite" to="." method="_on_lobinSprite_animation_finished"]
