@@ -6,11 +6,18 @@ var lobin
 var checkWin : bool
 
 func _ready():
-	pass # Replace with function body.
+	$Timer.connect("timeout",self,"waitForToChangeScene")
+	
+
+func waitForToChangeScene():
+	win()
 
 func _process(delta):
 	if checkWin and lobin != null and lobin.state == "happy":
-		win()
+		checkWin = false
+		$LevelCompletedSound.play()
+		$Timer.start()
+		
 
 func win():
 	get_tree().change_scene_to(next_scene)

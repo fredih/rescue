@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/Baselevel.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://levels/brackgrounds/Background.png" type="Texture" id=5]
 [ext_resource path="res://characters/lobins/lobin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://levels/OneGhosto.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/music/mainBackgroundSoundtrack.ogg" type="AudioStream" id=8]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.00645161 )
@@ -49,3 +50,8 @@ position = Vector2( 288.977, 144.447 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 81.7891, 204.644 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -15.0
+autoplay = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://characters/enemies/ghosto/Ghosto.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/goal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/OneZardo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/music/mainBackgroundSoundtrack.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.00645161 )
@@ -50,10 +51,15 @@ position = Vector2( 809.569, 233.329 )
 next_scene = ExtResource( 8 )
 
 [node name="Lobin" parent="." instance=ExtResource( 3 )]
-position = Vector2( 266.109, 226.752 )
+position = Vector2( 266.109, 232.437 )
 
 [node name="Ghosto" parent="." instance=ExtResource( 6 )]
 position = Vector2( 627.459, 135.557 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 58.3712, 126.736 )
+position = Vector2( 58.3712, 129.684 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+autoplay = true
