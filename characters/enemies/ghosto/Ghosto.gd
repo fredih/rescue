@@ -24,14 +24,16 @@ func _on_AnimatedSprite_animation_finished():
 
 
 func _on_Ghosto_body_entered(body):
-	body._velocity = -body._velocity
 	if body.get_name() == "Lobin":
+		body._velocity = -body._velocity
 		if body.isLit:
 			$AnimatedSprite.animation = "Dead"
 			print("dead")
 		elif body.state != "Got_Hit":
 			$AnimatedSprite.animation = "Scream"
 			body.state = "Got_Hit"
+	if body.get_name() == "Player" and $AnimatedSprite.animation == "Idle":
+		$AnimatedSprite.animation = "Scream"
 
 
 func _on_ScreamArea_body_entered(body):

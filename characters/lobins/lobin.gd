@@ -24,6 +24,7 @@ func _physics_process(delta: float) -> void:
 		
 	match state:
 		"happy":
+			isLit = false
 			$lobinSprite.animation = "Idle"
 			if abs(target.position.x - position.x) > maxDistance or !target.isLit:
 				state = "scared"
@@ -33,18 +34,18 @@ func _physics_process(delta: float) -> void:
 				state = "throwed"
 			
 		"scared":
+			isLit = false
 			raycastPlayer()
 			$lobinSprite.animation = "Scared"
 			if result and target.isLit and result.collider == target:
 				state = "reachingPlayer"
 			elif abs(target.position.x - position.x) < maxDistance and Input.is_action_just_pressed("ui_throw"):
 				state = "throwed"
-				isLit = false
 				_velocity = throwForce
 				
 		"reachingPlayer":
+			isLit = false
 			raycastPlayer()
-			
 			_velocity.x = speed.x * (target.position.x - position.x)
 			if abs(_velocity.x) > 150:
 				$lobinSprite.animation = "Run"

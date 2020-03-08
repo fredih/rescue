@@ -47,7 +47,7 @@ animations = [ {
 "name": "run",
 "speed": 9.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 24 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 20 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
@@ -64,7 +64,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "attack"
-frame = 3
+frame = 5
 playing = true
 
 [node name="Light" type="Light2D" parent="."]
