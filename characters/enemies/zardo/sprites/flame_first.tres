@@ -22,8 +22,18 @@
 
 [resource]
 animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "continous",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "second",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 9 ), ExtResource( 14 ), ExtResource( 19 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 18 ) ],
 "loop": true,
-"name": "flame_first",
+"name": "first",
 "speed": 5.0
 } ]

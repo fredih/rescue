@@ -26,11 +26,12 @@
 [ext_resource path="res://characters/enemies/zardo/sprites/dead/wizard death_10.png" type="Texture" id=24]
 [ext_resource path="res://characters/enemies/zardo/sprites/dead/wizard death_5.png" type="Texture" id=25]
 [ext_resource path="res://characters/enemies/zardo/sprites/move/wizard fly forward_4.png" type="Texture" id=26]
-[ext_resource path="res://characters/enemies/zardo/sprites/flame_second.tres" type="SpriteFrames" id=27]
+[ext_resource path="res://characters/enemies/zardo/Zardo.gd" type="Script" id=27]
 [ext_resource path="res://characters/enemies/zardo/sprites/flame_first.tres" type="SpriteFrames" id=28]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 38.5012
+radius = 14.0227
+height = 35.7311
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -51,35 +52,43 @@ animations = [ {
 } ]
 
 [node name="Zardo" type="Area2D"]
+script = ExtResource( 27 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.37735, 0 )
+position = Vector2( -3.3042, -1.25436 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 11
+frame = 5
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="fire" type="AnimatedSprite" parent="."]
-position = Vector2( 7.76692, -5.2704 )
+visible = false
+position = Vector2( -11.0484, 12.2906 )
 frames = ExtResource( 28 )
-animation = "flame_first"
-frame = 6
+animation = "continous"
+frame = 5
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="fire2" type="AnimatedSprite" parent="."]
-position = Vector2( -10.5049, 13.0014 )
-frames = ExtResource( 27 )
-animation = "flame_second"
+visible = false
+position = Vector2( 10.6938, -1.92545 )
+frames = ExtResource( 28 )
+animation = "continous"
+frame = 5
 playing = true
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="body_entered" from="." to="." method="_on_Zardo_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="fire" to="." method="_on_fire_animation_finished"]
+[connection signal="animation_finished" from="fire2" to="." method="_on_fire2_animation_finished"]
