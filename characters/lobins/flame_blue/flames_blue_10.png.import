@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flames_blue_11.png-3b2d5e0317884adc2c3fcec85349791a.stex"
+path="res://.import/flames_blue_10.png-53e1b862d28aaaf305d7278490456d8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/sprites/flame_blue/flames_blue_11.png"
-dest_files=[ "res://.import/flames_blue_11.png-3b2d5e0317884adc2c3fcec85349791a.stex" ]
+source_file="res://characters/lobins/flame_blue/flames_blue_10.png"
+dest_files=[ "res://.import/flames_blue_10.png-53e1b862d28aaaf305d7278490456d8c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

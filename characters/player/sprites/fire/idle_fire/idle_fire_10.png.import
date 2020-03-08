@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flames_blue_12.png-15e318b66893a5a7ce8c8e60f5d28bec.stex"
+path="res://.import/idle_fire_10.png-f140b9d59663f1d2acc82f5e0face306.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/sprites/flame_blue/flames_blue_12.png"
-dest_files=[ "res://.import/flames_blue_12.png-15e318b66893a5a7ce8c8e60f5d28bec.stex" ]
+source_file="res://characters/player/sprites/fire/idle_fire/idle_fire_10.png"
+dest_files=[ "res://.import/idle_fire_10.png-f140b9d59663f1d2acc82f5e0face306.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

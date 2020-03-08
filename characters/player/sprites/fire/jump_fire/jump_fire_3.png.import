@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flames_blue_10.png-bb1b529b82e2bc0d896d63cb07f51821.stex"
+path="res://.import/jump_fire_3.png-c6552c56a3def62b63b9f57220f20f55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/sprites/flame_blue/flames_blue_10.png"
-dest_files=[ "res://.import/flames_blue_10.png-bb1b529b82e2bc0d896d63cb07f51821.stex" ]
+source_file="res://characters/player/sprites/fire/jump_fire/jump_fire_3.png"
+dest_files=[ "res://.import/jump_fire_3.png-c6552c56a3def62b63b9f57220f20f55.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

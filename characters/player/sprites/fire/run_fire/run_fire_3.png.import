@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flames_blue_5.png-4dc7d6caf7f18f6ec4fee4d79882aca7.stex"
+path="res://.import/run_fire_3.png-bfb32656a85d76c8a0b6621e64dca935.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/sprites/flame_blue/flames_blue_5.png"
-dest_files=[ "res://.import/flames_blue_5.png-4dc7d6caf7f18f6ec4fee4d79882aca7.stex" ]
+source_file="res://characters/player/sprites/fire/run_fire/run_fire_3.png"
+dest_files=[ "res://.import/run_fire_3.png-bfb32656a85d76c8a0b6621e64dca935.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

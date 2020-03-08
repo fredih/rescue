@@ -5,12 +5,12 @@ export var isLit = false
 var isThrowing = false
 var direction
 var hasLobin = false
-
+var litAnimation = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
 	$AnimatedSprite.flip_h = true
-	$AnimatedSprite.animation = "idle"
+	$AnimatedSprite.animation = "idle" + litAnimation
 	$AnimatedSprite.play()
 
 
@@ -18,7 +18,12 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("ui_lit"):
 		isLit = !isLit
-		$Light.energy = 5.0 if (isLit) else 0
+		if isLit:
+			litAnimation =  "_fire"
+			$Light.energy = 5.0
+		else:
+			litAnimation = "" 
+			$Light.energy = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -54,15 +59,15 @@ func calculate_move_velocity(
 func animate(direction):
 	
 	if isThrowing:
-		$AnimatedSprite.animation = "attack"
+		$AnimatedSprite.animation = "attack" + litAnimation
 		$AnimatedSprite.speed_scale = 6
 		return
 	elif _velocity.y > 0:
-		$AnimatedSprite.animation = "jump"
+		$AnimatedSprite.animation = "jump" + litAnimation
 	elif _velocity.x != 0:
-		$AnimatedSprite.animation = "run"
+		$AnimatedSprite.animation = "run" + litAnimation
 	else:
-		$AnimatedSprite.animation = "idle"
+		$AnimatedSprite.animation = "idle" + litAnimation
 	
 	if direction.x > 0:
 		$AnimatedSprite.flip_h = true
@@ -73,7 +78,7 @@ func animate(direction):
 
 
 func _on_AnimatedSprite_animation_finished():
-	if $AnimatedSprite.animation == "attack":
+	if $AnimatedSprite.animation == "attack" or  $AnimatedSprite.animation == "attack_fire" :
 		$AnimatedSprite.speed_scale = 1
 		isThrowing = false
 		animate(direction)

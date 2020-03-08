@@ -13,7 +13,10 @@ func _ready():
 	gravity = 800
 
 func _process(delta):
-	pass
+	if isLit:
+		$fire.show()
+	else:
+		$fire.hide()
 	
 		
 func _physics_process(delta: float) -> void:
