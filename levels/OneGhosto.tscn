@@ -3,11 +3,11 @@
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://characters/lobins/lobin.tscn" type="PackedScene" id=3]
-[ext_resource path="res://levels/level02.gd" type="Script" id=4]
+[ext_resource path="res://levels/Baselevel.gd" type="Script" id=4]
 [ext_resource path="res://levels/brackgrounds/Background.png" type="Texture" id=5]
 [ext_resource path="res://characters/enemies/ghosto/Ghosto.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/goal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://levels/level04.tscn" type="PackedScene" id=9]
+[ext_resource path="res://levels/OneZardo.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.00645161 )
@@ -16,7 +16,7 @@ colors = PoolColorArray( 0, 0, 0, 0.92549 )
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[node name="level02" type="Node2D"]
+[node name="OneGhosto" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Background" type="Sprite" parent="."]
@@ -47,7 +47,7 @@ __meta__ = {
 
 [node name="Goal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 438.982, 231.438 )
-next_scene = ExtResource( 9 )
+next_scene = ExtResource( 8 )
 
 [node name="Lobin" parent="." instance=ExtResource( 3 )]
 position = Vector2( 101.614, 226.122 )

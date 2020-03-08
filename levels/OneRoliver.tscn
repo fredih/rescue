@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
-[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://levels/Baselevel.gd" type="Script" id=3]
-[ext_resource path="res://characters/lobins/lobin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/Baselevel.gd" type="Script" id=2]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://environment/goal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/brackgrounds/Background.png" type="Texture" id=5]
-[ext_resource path="res://environment/goal.tscn" type="PackedScene" id=7]
-[ext_resource path="res://characters/enemies/roliver/Roliver.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/lobins/lobin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/enemies/roliver/Roliver.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/ThrowingPlusZardo.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.00645161 )
@@ -15,8 +16,8 @@ colors = PoolColorArray( 0, 0, 0, 0.92549 )
 [sub_resource type="GradientTexture" id=2]
 gradient = SubResource( 1 )
 
-[node name="level04" type="Node2D"]
-script = ExtResource( 3 )
+[node name="OneRoliver" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 459.891, -103.154 )
@@ -40,16 +41,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Goal" parent="." instance=ExtResource( 7 )]
+[node name="Goal" parent="." instance=ExtResource( 4 )]
 position = Vector2( 351.632, 213.879 )
+next_scene = ExtResource( 8 )
 
-[node name="Lobin" parent="." instance=ExtResource( 4 )]
+[node name="Lobin" parent="." instance=ExtResource( 6 )]
 position = Vector2( 44.9868, 212.362 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 81.7891, 204.804 )
 
-[node name="Roliver" parent="." instance=ExtResource( 9 )]
+[node name="Roliver" parent="." instance=ExtResource( 7 )]
 position = Vector2( 176.865, 224.534 )
 rotation = 1.5708
 scale = Vector2( 0.3, 0.3 )

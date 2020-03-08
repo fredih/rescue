@@ -8,6 +8,8 @@ func _on_fire2_animation_finished():
 	$AnimatedSprite.animation = "Dead"
 	$fire.hide()
 	$fire2.hide()
+	$CollisionShape2D.queue_free()
+	$ScreamArea.queue_free()
 	print("finished_fire2_animation")
 
 func _on_AnimatedSprite_animation_finished():

@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Rescue"
-run/main_scene="res://levels/level01.tscn"
+run/main_scene="res://levels/NoEnemies.tscn"
 config/icon="res://icon.png"
 
 [display]
