@@ -27,6 +27,7 @@ func _on_Ghosto_body_entered(body):
 	if body.get_name() == "Lobin":
 		body._velocity = -body._velocity
 		if body.isLit:
+			print("entered ghosto lit")
 			$deadSound.play()
 			$AnimatedSprite.animation = "Dead"
 			$ScreamArea.queue_free()
@@ -34,6 +35,7 @@ func _on_Ghosto_body_entered(body):
 			$AnimatedSprite.speed_scale = 1.5
 			print("dead")
 		elif body.state != "Got_Hit":
+			print("entered ghosto NOT lit")
 			$laugh.play()
 			$AnimatedSprite.animation = "Scream"
 			body.state = "Got_Hit"
@@ -44,6 +46,7 @@ func _on_Ghosto_body_entered(body):
 
 func _on_ScreamArea_body_entered(body):
 	if body.get_name() == "Lobin" and body.state != "Got_Hit" and !body.isLit:
+		print("entered screamArea lit")
 		body.playPop()
 		$laugh.play()
 		$AnimatedSprite.animation = "Scream"

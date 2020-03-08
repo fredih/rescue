@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://levels/brackgrounds/Background.png" type="Texture" id=1]
+[ext_resource path="res://levels/OneGhosto.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tiles/tile1.tres" type="TileSet" id=3]
+[ext_resource path="res://characters/lobins/lobin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://environment/goal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/lobins/lobin.gd" type="Script" id=7]
+[ext_resource path="res://characters/player/Player.gd" type="Script" id=8]
+[ext_resource path="res://environment/goal.gd" type="Script" id=9]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.00645161 )
+colors = PoolColorArray( 0, 0, 0, 0.92549 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 459.891, -103.154 )
+texture = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 8, 8 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 786435, 0, 0, 786436, 0, 1, 786437, 0, 2, 851971, 0, 65536, 851972, 0, 262147, 851973, 0, 65538, 917507, 0, 65536, 917508, 0, 196609, 917509, 0, 65538, 983043, 0, 65536, 983044, 0, 196609, 983045, 0, 65538, 1048579, 0, 65536, 1048580, 0, 196609, 1048581, 0, 65538, 1114115, 0, 65536, 1114116, 0, 262147, 1114117, 0, 65538, 1179651, 0, 65536, 1179652, 0, 196612, 1179653, 0, 65538, 1245187, 0, 65536, 1245188, 0, 196612, 1245189, 0, 65538, 1310723, 0, 65536, 1310724, 0, 196610, 1310725, 0, 65538, 1376259, 0, 65536, 1376260, 0, 196611, 1376261, 0, 65538, 1441795, 0, 65536, 1441796, 0, 196611, 1441797, 0, 65538, 1507331, 0, 65536, 1507332, 0, 196611, 1507333, 0, 65538, 1572867, 0, 65536, 1572868, 0, 65537, 1572869, 0, 65538, 1638403, 0, 65536, 1638404, 0, 262147, 1638405, 0, 65538, 1703939, 0, 65536, 1703940, 0, 262148, 1703941, 0, 65538, 1769475, 0, 65536, 1769476, 0, 262145, 1769477, 0, 65538, 1835011, 0, 65536, 1835012, 0, 262145, 1835013, 0, 65538, 1900547, 0, 65536, 1900548, 0, 262146, 1900549, 0, 65538, 1966083, 0, 65536, 1966084, 0, 262148, 1966085, 0, 65538, 2031619, 0, 65536, 2031620, 0, 262145, 2031621, 0, 65538, 2097155, 0, 131072, 2097156, 0, 131073, 2097157, 0, 131074 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_top = -243.0
+margin_right = 926.0
+margin_bottom = 485.0
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goal" type="Area2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 603.211, 213.722 )
+script = ExtResource( 9 )
+next_scene = ExtResource( 2 )
+
+[node name="Lobin" type="KinematicBody2D" parent="." instance=ExtResource( 4 )]
+light_mask = 2
+position = Vector2( 288.977, 144.447 )
+collision_mask = 4
+script = ExtResource( 7 )
+
+[node name="Player" type="KinematicBody2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 81.7891, 204.644 )
+collision_mask = 4
+script = ExtResource( 8 )
+[connection signal="body_entered" from="Goal" to="Goal" method="_on_Goal_body_entered"]
+[connection signal="body_exited" from="Goal" to="Goal" method="_on_Goal_body_exited"]
