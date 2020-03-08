@@ -61,7 +61,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 5
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -72,7 +72,7 @@ visible = false
 position = Vector2( -11.0484, 12.2906 )
 frames = ExtResource( 28 )
 animation = "continous"
-frame = 5
+frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -83,7 +83,7 @@ visible = false
 position = Vector2( 10.6938, -1.92545 )
 frames = ExtResource( 28 )
 animation = "continous"
-frame = 5
+frame = 2
 playing = true
 __meta__ = {
 "_edit_lock_": true

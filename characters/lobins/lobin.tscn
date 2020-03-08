@@ -14,7 +14,7 @@
 [ext_resource path="res://characters/lobins/sprites/walk/tile005.png" type="Texture" id=12]
 [ext_resource path="res://characters/lobins/sprites/run/lobin_18.png" type="Texture" id=13]
 [ext_resource path="res://characters/lobins/sprites/run/lobin_19.png" type="Texture" id=14]
-[ext_resource path="res://characters/lobins/Lobin.gd" type="Script" id=15]
+[ext_resource path="res://characters/lobins/lobin.gd" type="Script" id=15]
 [ext_resource path="res://characters/lobins/sprites/hit/lobin_17.png" type="Texture" id=16]
 [ext_resource path="res://characters/lobins/sprites/idle/lobin_4.png" type="Texture" id=17]
 [ext_resource path="res://characters/lobins/sprites/idle/lobin_2.png" type="Texture" id=18]
@@ -34,16 +34,6 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Run",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "Hit",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 4 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Walk",
@@ -52,6 +42,16 @@ animations = [ {
 "frames": [ ExtResource( 19 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Scared",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Hit",
 "speed": 5.0
 } ]
 
@@ -66,7 +66,7 @@ shape = SubResource( 1 )
 [node name="lobinSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "Hit"
-frame = 8
+frame = 4
 playing = true
 __meta__ = {
 "_edit_lock_": true
