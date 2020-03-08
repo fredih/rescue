@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://characters/lobins/sprites/run/lobin_22.png" type="Texture" id=1]
 [ext_resource path="res://characters/lobins/sprites/walk/tile007.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://characters/lobins/sprites/idle/lobin_1.png" type="Texture" id=21]
 [ext_resource path="res://characters/lobins/sprites/idle/lobin_3.png" type="Texture" id=22]
 [ext_resource path="res://characters/player/sprites/light1.png" type="Texture" id=23]
+[ext_resource path="res://characters/lobins/sounds/pop.wav" type="AudioStream" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.40524, 7.54183 )
@@ -39,15 +40,15 @@ animations = [ {
 "name": "Walk",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "Scared",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Run",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "Scared",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 16 ) ],
 "loop": true,
@@ -68,7 +69,6 @@ shape = SubResource( 1 )
 light_mask = 2
 frames = SubResource( 2 )
 animation = "Hit"
-frame = 5
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -85,4 +85,8 @@ texture = ExtResource( 23 )
 texture_scale = 2.9
 color = Color( 0.282353, 0.32549, 1, 1 )
 energy = 3.8
+
+[node name="pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+volume_db = -14.136
 [connection signal="animation_finished" from="lobinSprite" to="." method="_on_lobinSprite_animation_finished"]

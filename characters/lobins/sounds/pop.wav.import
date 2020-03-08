@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pop.wav-4609560c2acb88591afe85fd12468588.sample"
+
+[deps]
+
+source_file="res://characters/lobins/sounds/pop.wav"
+dest_files=[ "res://.import/pop.wav-4609560c2acb88591afe85fd12468588.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

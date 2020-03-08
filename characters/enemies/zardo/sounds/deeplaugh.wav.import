@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/deeplaugh.wav-3d5c5a84587e32754d1347e63ef7cc6b.sample"
+
+[deps]
+
+source_file="res://characters/enemies/zardo/sounds/deeplaugh.wav"
+dest_files=[ "res://.import/deeplaugh.wav-3d5c5a84587e32754d1347e63ef7cc6b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

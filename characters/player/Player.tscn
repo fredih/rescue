@@ -66,6 +66,7 @@ shape = SubResource( 1 )
 light_mask = 2
 frames = SubResource( 2 )
 animation = "attack"
+frame = 3
 playing = true
 
 [node name="DefaultLight" type="Light2D" parent="."]

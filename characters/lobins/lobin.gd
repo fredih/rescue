@@ -90,3 +90,7 @@ func raycastPlayer():
 func _on_lobinSprite_animation_finished():
 	if $lobinSprite.animation == "Hit":
 		queue_free()
+
+
+func playPop():
+	$pop.play()

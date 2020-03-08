@@ -44,9 +44,10 @@ func _on_Ghosto_body_entered(body):
 
 func _on_ScreamArea_body_entered(body):
 	if body.get_name() == "Lobin" and body.state != "Got_Hit" and !body.isLit:
-			$laugh.play()
-			$AnimatedSprite.animation = "Scream"
-			body.state = "Got_Hit"
+		body.playPop()
+		$laugh.play()
+		$AnimatedSprite.animation = "Scream"
+		body.state = "Got_Hit"
 
 
 func _on_laugh_finished():
