@@ -56,6 +56,7 @@ animations = [ {
 } ]
 
 [node name="Lobin" type="KinematicBody2D"]
+light_mask = 2
 collision_mask = 4
 script = ExtResource( 15 )
 
@@ -64,19 +65,27 @@ position = Vector2( -0.368057, 0.815971 )
 shape = SubResource( 1 )
 
 [node name="lobinSprite" type="AnimatedSprite" parent="."]
+light_mask = 2
 frames = SubResource( 2 )
 animation = "Hit"
-frame = 4
+frame = 8
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Light" type="Light2D" parent="."]
+visible = false
 position = Vector2( 0.429274, -0.135151 )
 scale = Vector2( 0.530478, 0.566499 )
 enabled = false
 texture = ExtResource( 23 )
 color = Color( 0.321569, 0.521569, 0.941176, 1 )
-energy = 0.77
+energy = 1.92
+
+[node name="Light2" type="Light2D" parent="."]
+light_mask = 4
+texture = ExtResource( 23 )
+texture_scale = 3.2
+energy = 2.1
 [connection signal="animation_finished" from="lobinSprite" to="." method="_on_lobinSprite_animation_finished"]

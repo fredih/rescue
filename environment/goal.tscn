@@ -21,10 +21,13 @@ extents = Vector2( 7.98273, 7.82571 )
 script = ExtResource( 5 )
 
 [node name="Light" type="Light2D" parent="."]
+light_mask = 4
 texture = ExtResource( 4 )
-energy = 1.1
+texture_scale = 2.1
+energy = 2.1
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+light_mask = 2
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
