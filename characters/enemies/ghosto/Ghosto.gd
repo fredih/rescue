@@ -27,19 +27,32 @@ func _on_Ghosto_body_entered(body):
 	if body.get_name() == "Lobin":
 		body._velocity = -body._velocity
 		if body.isLit:
+			$deadSound.play()
 			$AnimatedSprite.animation = "Dead"
 			$ScreamArea.queue_free()
 			$CollisionShape2D.queue_free()
 			$AnimatedSprite.speed_scale = 1.5
 			print("dead")
 		elif body.state != "Got_Hit":
+			$laugh.play()
 			$AnimatedSprite.animation = "Scream"
 			body.state = "Got_Hit"
 	if body.get_name() == "Player" and $AnimatedSprite.animation == "Idle":
+		$laugh.play()
 		$AnimatedSprite.animation = "Scream"
 
 
 func _on_ScreamArea_body_entered(body):
 	if body.get_name() == "Lobin" and body.state != "Got_Hit" and !body.isLit:
+			$laugh.play()
 			$AnimatedSprite.animation = "Scream"
 			body.state = "Got_Hit"
+
+
+func _on_laugh_finished():
+	$laugh.stop()
+
+
+#func _on_hauntedArea_body_entered(body):
+#	if body.get_name() == "Player":
+#		$hauntedSound.play()

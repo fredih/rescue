@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/GHOST8B.wav-56d7d1776f132beaecca554287b9b67d.sample"
+
+[deps]
+
+source_file="res://characters/enemies/ghosto/sounds/GHOST8B.wav"
+dest_files=[ "res://.import/GHOST8B.wav-56d7d1776f132beaecca554287b9b67d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
