@@ -28,6 +28,9 @@ func _on_Ghosto_body_entered(body):
 		body._velocity = -body._velocity
 		if body.isLit:
 			$AnimatedSprite.animation = "Dead"
+			$ScreamArea.queue_free()
+			$CollisionShape2D.queue_free()
+			$AnimatedSprite.speed_scale = 1.5
 			print("dead")
 		elif body.state != "Got_Hit":
 			$AnimatedSprite.animation = "Scream"
