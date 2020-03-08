@@ -5,7 +5,8 @@ var isLit = false
 var playerPointer
 var result
 var state = "scared"
-var throwForce = Vector2(0,-450)
+var throwForce = Vector2(-200,-300)
+var frictionWhenDead = 10
 export var maxDistance = 10
 func _ready():
 	speed.x = 2.5
@@ -13,11 +14,14 @@ func _ready():
 
 func _process(delta):
 	pass
-	#_velocity = _velocity.normalized()
 	
 		
 func _physics_process(delta: float) -> void:
-	
+	if target.get_node("AnimatedSprite").flip_h:
+		throwForce.x = abs(throwForce.x)
+	else:
+		throwForce.x = -abs(throwForce.x)
+		
 	match state:
 		"happy":
 			$lobinSprite.animation = "Idle"
@@ -58,15 +62,18 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor():
 				_velocity.x = 0
 				state = "scared"
-			
+		"Got_Hit":
+			$lobinSprite.animation = "Hit"
+			if is_on_floor():
+				_velocity.x -=  frictionWhenDead * sign(_velocity.x)
 			
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL, false)
 	$Light.enabled = isLit
-	
-	if _velocity.x < 0:
-		$lobinSprite.flip_h = true
-	elif _velocity.x > 0:
-		$lobinSprite.flip_h = false
+	if state != "Got_Hit":
+		if _velocity.x < 0:
+			$lobinSprite.flip_h = true
+		elif _velocity.x > 0:
+			$lobinSprite.flip_h = false
 			
 		
 		
@@ -74,3 +81,8 @@ func raycastPlayer():
 	#raycasting player
 	var space_state = get_world_2d().direct_space_state
 	result = space_state.intersect_ray(position, target.position, [self])
+
+
+func _on_lobinSprite_animation_finished():
+	if $lobinSprite.animation == "Hit":
+		queue_free()

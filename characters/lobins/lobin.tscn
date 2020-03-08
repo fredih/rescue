@@ -39,7 +39,7 @@ animations = [ {
 "name": "Run",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "Hit",
 "speed": 5.0
@@ -65,7 +65,8 @@ shape = SubResource( 1 )
 
 [node name="lobinSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "Scared"
+animation = "Hit"
+frame = 6
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -78,3 +79,4 @@ enabled = false
 texture = ExtResource( 23 )
 color = Color( 0.321569, 0.521569, 0.941176, 1 )
 energy = 0.77
+[connection signal="animation_finished" from="lobinSprite" to="." method="_on_lobinSprite_animation_finished"]

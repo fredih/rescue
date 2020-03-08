@@ -19,9 +19,22 @@ func _ready():
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "Dead":
 		queue_free()
+	if $AnimatedSprite.animation == "Scream":
+		$AnimatedSprite.animation = "Idle"
 
 
 func _on_Ghosto_body_entered(body):
-	if body.isLit and body.state == "throwed":
-		$AnimatedSprite.animation = "Dead"
-		print("dead")
+	body._velocity = -body._velocity
+	if body.get_name() == "Lobin":
+		if body.isLit:
+			$AnimatedSprite.animation = "Dead"
+			print("dead")
+		elif body.state != "Got_Hit":
+			$AnimatedSprite.animation = "Scream"
+			body.state = "Got_Hit"
+
+
+func _on_ScreamArea_body_entered(body):
+	if body.get_name() == "Lobin" and body.state != "Got_Hit" and !body.isLit:
+			$AnimatedSprite.animation = "Scream"
+			body.state = "Got_Hit"
