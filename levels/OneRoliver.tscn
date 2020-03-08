@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://levels/Baselevel.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://characters/lobins/lobin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://characters/enemies/roliver/Roliver.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/ThrowingPlusZardo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/music/mainBackgroundSoundtrack.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.00645161 )
@@ -55,3 +56,8 @@ position = Vector2( 81.7891, 204.804 )
 position = Vector2( 176.865, 224.534 )
 rotation = 1.5708
 scale = Vector2( 0.3, 0.3 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+autoplay = true

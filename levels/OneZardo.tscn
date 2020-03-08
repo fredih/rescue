@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tiles/tile1.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://characters/enemies/zardo/Zardo.tscn" type="PackedScene" id=6]
 [ext_resource path="res://environment/goal.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/OneRoliver.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/music/mainBackgroundSoundtrack.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.00645161 )
@@ -57,3 +58,8 @@ position = Vector2( 131.213, 224.772 )
 
 [node name="Zardo" parent="." instance=ExtResource( 6 )]
 position = Vector2( 382.402, 170.915 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+autoplay = true
