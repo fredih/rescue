@@ -21,15 +21,25 @@ func _process(delta):
 	if returnToOriginalPosition:
 		position.y += 1;	
 		if(position.y >= originalPosition):
+			$AnimatedSprite.animation = "Idle"
 			position.y = originalPosition
 			returnToOriginalPosition = false	
 	elif attack:
-		position.y -= 1;
+		position.y -= 5;
 		if(position.y <= limitAttackRange):
 			returnToOriginalPosition = true
 			attack = false
 
 
 func _on_Area2D_body_entered(body):
-	attack = true
-	$AnimatedSprite.animation = "Attack"
+	if body.name == "Lobin" and body.isLit:
+		attack = true
+		$AnimatedSprite.animation = "Attack"
+		
+		
+
+
+func _on_Area2D2_body_entered(body):
+	pass
+	if body.name == "Lobin":
+		body.state = "Got_Death_Damage"

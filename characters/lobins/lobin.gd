@@ -66,6 +66,10 @@ func _physics_process(delta: float) -> void:
 			$lobinSprite.animation = "Hit"
 			if is_on_floor():
 				_velocity.x -=  frictionWhenDead * sign(_velocity.x)
+		"Got_Death_Damage":
+			$lobinSprite.animation = "Hit"
+			yield(get_tree().create_timer(0.4), "timeout")
+			.queue_free()
 			
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL, false)
 	$Light.enabled = isLit
@@ -75,8 +79,7 @@ func _physics_process(delta: float) -> void:
 		elif _velocity.x > 0:
 			$lobinSprite.flip_h = false
 			
-		
-		
+
 func raycastPlayer():
 	#raycasting player
 	var space_state = get_world_2d().direct_space_state
